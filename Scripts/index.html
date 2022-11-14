@@ -1,78 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel = "stylesheet" href = "bower_components/bootstrap/dist/css/bootstrap.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>ToDo List with Backbone...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contact App with Marionette Js</title>
 </head>
+
 <body>
     <div class = "container">
-        <h1>
-            Contact Application!
-        </h1>
-        <table class = "table">
-            <thead>
-                <tr>
-                    <th>
-                        First Name
-                    </th>
-                    <th>
-                        Last Name
-                    </th>
-                    <th>
-                        Phone Number
-                    </th>
-                    <th>
-                        Action
-                    </th>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="text" class="form-control first_name-input">
-                  </td>
-                  <td>
-                    <input type="text" class="form-control last_name-input">
-                  </td>
-                  <td>
-                    <input type="text" class="form-control phone_number-input">
-                  </td>
-                  <td>
-                    <button class="btn btn-primary add-contact"> Add </button>
-                  </td>
-                </tr>
-            </thead>
-            <tbody class="contacts-list"></tbody>
-        </table>
+        <h3 style = "color : blue">
+            Contact App With Marionette JS
+        </h3>
     </div>
-    
-    <script type = "text/template" class = "contact-list-template">
-        <td>
-          <span class = "first_name"><%= first_name %></span>
-        </td>
-        <td>
-          <span class = "last_name"><%= last_name %></span>
-        </td>
-        <td>
-          <span class = "phone_number"><%= phone_number %></span>
-        </td>
-        <td>
-          <button class="btn btn-warning edit-contact"> Edit </button>
-          <button class="btn btn-danger delete-contact"> Delete </button>
-          <button class="btn btn-success update-contact" style = "display:none"> Update </button>
-          <button class="btn btn-secondary cancel-contact" style = "display:none"> Cancel </button>
-        </td>
+    <div id="form" class="contact-form">
+
+    </div>
+    <div id="list" class="contact-list">
+
+    </div>
+
+     <!-- Form View for adding contact to the database-->
+    <script type="text/template" class="formView">
+        <div class = "container">
+            <div>
+                <h1> Contact Application </h1>
+                <table class = "table">
+                    <tr>
+                        <th>
+                            First Name
+                        </th>
+                        <th>
+                            Last Name
+                        </th>
+                        <th>
+                            Phone Number
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                          <input type="text" class="form-control first_name-input">
+                        </td>
+                        <td>
+                          <input type="text" class="form-control last_name-input">
+                        </td>
+                        <td>
+                          <input type="text" class="form-control phone_number-input">
+                        </td>
+                        <td>
+                          <button class="btn btn-primary add-contact"> Add </button>
+                        </td>
+                      </tr>
+                </table>
+            </div>
+        </div>
     </script>
 
+     <!-- Single contact list view -->
+    <script type="text/template" class="contactListView">
+            <td>
+            <span class = "first_name"><%= first_name %></span>
+            </td>
+            <td>
+            <span class = "last_name"><%= last_name %></span>
+            </td>
+            <td>
+            <span class = "phone_number"><%= phone_number %></span>
+            </td>
+            <td>
+            <button class="btn btn-warning edit-contact"> Edit </button>
+            <button class="btn btn-danger delete-contact"> Delete </button>
+            <button class="btn btn-success update-contact" style = "display:none"> Update </button>
+            <button class="btn btn-secondary cancel-contact" style = "display:none"> Cancel </button>
+            </td>
+    </script>
+
+     <!-- Grouping the contact list view together-->
+    <script type="text/template" class="contactsListView">
+
+    </script>
+
+     <!-- View for No Contact List -->
+    <script type = "text/template" class = "noContactListView">
+
+    </script>
+
+     <!-- Loading the required dependencies from Bower! -->
+    <!-- <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <script src="./bower_components/underscore/underscore-min.js"></script>
+    <script src="./bower_components/backbone/backbone-min.js"></script>
+    <script src="./bower_components/backbone.marionette/lib/backbone.marionette.min.js"></script>
+    <script  type = "text/javascript" src= "Js/app.js"></script> -->
     <script src = "bower_components/jquery/dist/jquery.js"></script>
     <script src = "bower_components/underscore/underscore.js"></script>
     <script src = "bower_components/backbone/backbone.js"></script>
+    <script src = "./bower_components/backbone.marionette/lib/backbone.marionette.js" type = "text/javascript"></script>
     <script type = "text/javascript" src = "Js/model.js"></script>
     <script type = "text/javascript" src = "Js/collection.js"></script>
     <script type = "text/javascript" src = "Js/contactList.js"></script>
     <script type = "text/javascript" src = "Js/contactLists.js"></script>
-    <script type = "text/javascript" src = "Js/main.js"></script>
+    <script type = "module" src = "Js/index.js"></script>
+    
+    
 </body>
+
 </html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel = "stylesheet" href = "bower_components/bootstrap/dist/css/bootstrap.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>ToDo List with Backbone...</title>
+</head>
+<body>
+    <div class = "container">
+        <h1>
+            Contact Application!
+        </h1>
+        <table class = "table">
+            <thead>
+                <tr>
+                    <th>
+                        First Name
+                    </th>
+                    <th>
+                        Last Name
+                    </th>
+                    <th>
+                        Phone Number
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="text" class="form-control first_name-input">
+                  </td>
+                  <td>
+                    <input type="text" class="form-control last_name-input">
+                  </td>
+                  <td>
+                    <input type="text" class="form-control phone_number-input">
+                  </td>
+                  <td>
+                    <button class="btn btn-primary add-contact"> Add </button>
+                  </td>
+                </tr>
+            </thead>
+            <tbody class="contacts-list"></tbody>
+        </table>
+    </div>
+    
+    <script type = "text/template" class = "contact-list-template">
+        <td>
+          <span class = "first_name"><%= first_name %></span>
+        </td>
+        <td>
+          <span class = "last_name"><%= last_name %></span>
+        </td>
+        <td>
+          <span class = "phone_number"><%= phone_number %></span>
+        </td>
+        <td>
+          <button class="btn btn-warning edit-contact"> Edit </button>
+          <button class="btn btn-danger delete-contact"> Delete </button>
+          <button class="btn btn-success update-contact" style = "display:none"> Update </button>
+          <button class="btn btn-secondary cancel-contact" style = "display:none"> Cancel </button>
+        </td>
+    </script>
+
+    <script src = "bower_components/jquery/dist/jquery.js"></script>
+    <script src = "bower_components/underscore/underscore.js"></script>
+    <script src = "bower_components/backbone/backbone.js"></script>
+    <script src = "./bower_components/backbone.marionette/lib/backbone.marionette.js" type = "text/javascript"></script>
+    <script type = "text/javascript" src = "Js/model.js"></script>
+    <script type = "text/javascript" src = "Js/collection.js"></script>
+    <script type = "text/javascript" src = "Js/contactList.js"></script>
+    <script type = "text/javascript" src = "Js/contactLists.js"></script>
+    <script type = "module" src = "Js/index.js"></script>
+</body>
+</html>
